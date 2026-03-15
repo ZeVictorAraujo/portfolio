@@ -1,0 +1,21 @@
+.backColor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40 auto;    /* Centraliza o header na tela */
+  padding: 1rem 2rem;
+  width: 100%;
+  font-size: 20px;
+}
+
+.listPage{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap:40px;
+}
+
+.listPage li{
+    cursor: pointer;
+}
