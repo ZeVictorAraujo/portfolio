@@ -27,33 +27,17 @@ const projects = [
 const experiences = [
   {
     id: 1,
-    role: "Desenvolvedor Criativo Sênior",
-    company: "Estúdio Nomad",
-    period: "2024 — Presente",
-    description: "Liderança de projetos digitais interativos, unindo design e engenharia para marcas globais.",
-  },
-  {
-    id: 2,
-    role: "Designer de Produto",
-    company: "Fintech Aura",
-    period: "2022 — 2024",
-    description: "Criação de sistemas de design e fluxos financeiros acessíveis para milhões de usuários.",
-  },
-  {
-    id: 3,
-    role: "Desenvolvedor Front-end",
-    company: "Agência Verve",
-    period: "2019 — 2022",
-    description: "Desenvolvimento de sites e aplicações web com foco em performance, motion e UX.",
+    role: "Técnico de TI",
+    company: "Policlinica Regional de Saude de Alagoinhas",
+    period: "2025 — Presente",
+    description: "Suporte técnico, manutenção de hardware, redes, infraestrutura, controle de acessos, segurança da informação e gestão de ativos de TI.",
   },
 ];
 
 const skills = [
   "React & TypeScript",
-  "Tailwind & Design Tokens",
+  "Tailwind",
   "UX/UI Design",
-  "Motion Design",
-  "Acessibilidade",
   "Node.js",
 ];
 
@@ -62,51 +46,37 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-foreground">
-      {/* Global animated background */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-surface/40 to-background" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,_var(--indigo-muted)_0%,_transparent_30%,_transparent_70%,_var(--indigo-muted)_100%)] opacity-8" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,_var(--indigo-muted)_0%,_transparent_50%)] opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_35%,_var(--indigo)_0%,_transparent_45%)] opacity-25" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_35%_100%,_var(--indigo-muted)_0%,_transparent_55%)] opacity-30" />
-        <div className="absolute inset-0 gradient-mesh opacity-50 animate-pulse-slow" />
-
-        <div className="absolute -left-[15%] -top-[15%] h-[60vh] w-[60vh] rounded-full bg-indigo/20 blur-[120px] animate-float" />
-        <div className="absolute right-[0%] top-[20%] h-[65vh] w-[65vh] rounded-full bg-indigo-muted/25 blur-[140px] animate-float-delayed" />
-        <div className="absolute left-[15%] top-[50%] h-[55vh] w-[55vh] rounded-full bg-indigo/20 blur-[120px] animate-float" style={{ animationDelay: "-6s" }} />
-        <div className="absolute -right-[15%] bottom-[0%] h-[60vh] w-[60vh] rounded-full bg-indigo-muted/25 blur-[140px] animate-float-delayed" style={{ animationDelay: "-12s" }} />
-        <div className="absolute left-[0%] bottom-[30%] h-[50vh] w-[50vh] rounded-full bg-indigo/20 blur-[100px] animate-float" style={{ animationDelay: "-18s" }} />
-
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E')" }} />
-      </div>
+      
 
 
 
 
       {/* Hero — Split Screen */}
-      <section className="relative grid min-h-screen lg:grid-cols-2">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,_var(--indigo-muted)_0%,_transparent_40%)] opacity-40" />
+      <section className="relative flex min-h-screen items-center px-6 py-28 sm:px-12 lg:px-16 xl:px-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,_var(--indigo-muted)_0%,_transparent_45%)] opacity-40" />
 
-
-        <div className="relative z-10 flex flex-col justify-center px-6 py-20 sm:px-12 lg:px-16 xl:px-24">
-          <span className="mb-8 inline-block w-fit text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+        <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
+          <span className="mb-8 inline-block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
             Disponível para projetos
           </span>
+
           <h1 className="text-balance text-6xl font-medium leading-[0.95] tracking-tight sm:text-7xl xl:text-8xl">
-            Alex
-            <br />
-            <span className="font-light text-primary">Rivera</span>
+            Victor 
+            <span className="font-light text-primary"> Araujo</span>
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Desenvolvedor criativo que transforma ideias complexas em interfaces simples, acessíveis e com personalidade.
+
+          <p className="mx-auto mt-8 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Desenvolvedor FullStack, aprendendo DevOps
           </p>
-          <div className="mt-12 flex flex-wrap items-center gap-5">
+
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
             <a
               href="#projetos"
               className="group inline-flex items-center justify-center rounded-full border border-primary/40 bg-primary/10 px-7 py-3 text-sm font-medium text-primary transition-all hover:bg-primary hover:text-primary-foreground"
             >
               Ver projetos
             </a>
+
             <a
               href="#contato"
               className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
@@ -115,16 +85,6 @@ export default function App() {
             </a>
           </div>
         </div>
-
-        <div className="relative min-h-[50vh] overflow-hidden lg:min-h-screen">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-[1px] w-2/3 bg-gradient-to-r from-transparent via-border to-transparent" />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-2/3 w-[1px] bg-gradient-to-b from-transparent via-border to-transparent" />
-          </div>
-        </div>
-
       </section>
 
       {/* Projects */}
@@ -132,7 +92,7 @@ export default function App() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-20 flex items-end justify-between gap-6">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Selecionados</span>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Biblioteca</span>
               <h2 className="mt-4 text-3xl font-light tracking-tight sm:text-4xl">Projetos</h2>
             </div>
             <span className="hidden text-sm tabular-nums text-muted-foreground sm:inline">{String(projects.length).padStart(2, "0")}</span>
@@ -236,10 +196,10 @@ export default function App() {
             Aberto a colaborações, freelas e conversas sobre design e tecnologia.
           </p>
           <a
-            href="mailto:oi@alexrivera.dev"
+            href="mailto:josearaujo.ba@hotmail.com"
             className="mt-12 inline-block text-lg font-light text-primary transition-colors hover:text-primary-foreground"
           >
-            oi@alexrivera.dev
+            josearaujo.ba@hotmail.com
           </a>
         </div>
       </section>
@@ -247,16 +207,13 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-border px-6 py-12 sm:px-12 lg:px-16 xl:px-24">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-          <span className="text-xs tracking-widest text-muted-foreground">© 2026 ALEX RIVERA</span>
+          <span className="text-xs tracking-widest text-muted-foreground">© 2026 Victor Araujo</span>
           <div className="flex items-center gap-8 text-xs tracking-widest text-muted-foreground">
-            <a href="https://github.com" className="transition-colors hover:text-foreground" target="_blank" rel="noreferrer">
+            <a href="https://github.com/zevictoraraujo" className="transition-colors hover:text-foreground" target="_blank" rel="noreferrer">
               GITHUB
             </a>
-            <a href="https://linkedin.com" className="transition-colors hover:text-foreground" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/zevictoraraujo/" className="transition-colors hover:text-foreground" target="_blank" rel="noreferrer">
               LINKEDIN
-            </a>
-            <a href="https://dribbble.com" className="transition-colors hover:text-foreground" target="_blank" rel="noreferrer">
-              DRIBBBLE
             </a>
           </div>
         </div>
