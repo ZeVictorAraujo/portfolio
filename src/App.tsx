@@ -6,8 +6,9 @@ const projects = [
     title: "Sistema de Controle de Finanças",
     category: "Sistema",
     year: "2026",
-    description: "Criado com o objetivo de melhorar o controle sobre seus gastos mensais.",
-    language: ["Java", "Spring Boot", "Angular"]
+    description:
+      "Criado com o objetivo de melhorar o controle sobre seus gastos mensais.",
+    language: ["Java", "Spring Boot", "Angular"],
   },
   {
     id: 2,
@@ -15,8 +16,8 @@ const projects = [
     category: "Teste",
     year: "2026",
     description: "hh",
-    language: ["Java", "Spring Boot", "Angular"]
-  }
+    language: ["Java", "Spring Boot", "Angular"],
+  },
 ];
 
 const experiences = [
@@ -30,21 +31,15 @@ const experiences = [
   },
 ];
 
-const skills = [
-  "React & TypeScript",
-  "Tailwind",
-  "Node.js",
-];
+const skills = ["React & TypeScript", "Tailwind", "Node.js"];
 
 export default function App() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
 
   return (
     <div className="relative min-h-screen overflow-hidden text-foreground">
-
       {/* Hero — Split Screen */}
       <section className="relative flex min-h-screen items-center px-6 py-28 sm:px-12 lg:px-16 xl:px-24">
-
         {/* Fundo roxo */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,_#7c3aed_0%,_transparent_45%)] opacity-40" />
 
@@ -109,9 +104,7 @@ export default function App() {
                       {project.category}
                     </span>
 
-                    <span className="tabular-nums">
-                      {project.year}
-                    </span>
+                    <span className="tabular-nums">{project.year}</span>
                   </div>
 
                   <h3 className="mt-2 text-2xl font-medium tracking-tight transition-colors group-hover:text-[#7c3aed]">
@@ -154,9 +147,7 @@ export default function App() {
                     viewBox="0 0 16 16"
                     fill="none"
                     className={`transition-transform duration-300 ${
-                      activeProject === project.id
-                        ? "translate-x-1"
-                        : ""
+                      activeProject === project.id ? "translate-x-1" : ""
                     }`}
                     aria-hidden="true"
                   >
@@ -202,10 +193,7 @@ export default function App() {
 
             <div className="space-y-16">
               {experiences.map((experience) => (
-                <article
-                  key={experience.id}
-                  className="group relative pl-10"
-                >
+                <article key={experience.id} className="group relative pl-10">
                   <div className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-[#7c3aed]/60 transition-colors group-hover:bg-[#7c3aed]" />
 
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
@@ -235,17 +223,13 @@ export default function App() {
       {/* Skills */}
       <section className="relative border-y border-border px-6 py-28 sm:px-12 lg:px-16 xl:px-24">
         <div className="mx-auto max-w-6xl">
-
           <h2 className="mt-4 text-[#7c3aed] font-light tracking-tight sm:text-4xl">
             Habilidades
           </h2>
 
           <div className="mt-16 grid gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {skills.map((skill, i) => (
-              <div
-                key={skill}
-                className="group flex items-baseline gap-4"
-              >
+              <div key={skill} className="group flex items-baseline gap-4">
                 <span className="text-xs tabular-nums text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -274,7 +258,8 @@ export default function App() {
           </h2>
 
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            Aberto a colaborações, freelas e conversas sobre design e tecnologia.
+            Aberto a colaborações, freelas e conversas sobre design e
+            tecnologia.
           </p>
 
           <a
@@ -296,19 +281,39 @@ export default function App() {
           <div className="flex items-center gap-8 text-xs tracking-widest text-muted-foreground">
             <a
               href="https://github.com/zevictoraraujo"
-              className="transition-colors hover:text-[#7c3aed]"
+              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-[#7c3aed]"
               target="_blank"
               rel="noreferrer"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.17a11.1 11.1 0 0 1 5.79 0c2.2-1.48 3.17-1.17 3.17-1.17.63 1.57.23 2.73.11 3.02.74.8 1.19 1.82 1.19 3.07 0 4.41-2.69 5.39-5.25 5.67.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+              </svg>
               GITHUB
             </a>
 
             <a
               href="https://www.linkedin.com/in/zevictoraraujo/"
-              className="transition-colors hover:text-[#7c3aed]"
+              className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-[#7c3aed]"
               target="_blank"
               rel="noreferrer"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
               LINKEDIN
             </a>
           </div>
