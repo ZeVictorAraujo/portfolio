@@ -7,7 +7,15 @@ const projects = [
     category: "Sistema",
     year: "2026",
     description: "Criado com o objetivo de melhorar o controle sobre seus gastos mensais.",
-    language: "Java, Spring Boot, Angular"
+    language: ["Java", "Spring Boot", "Angular"]
+  },
+  {
+    id: 2,
+    title: "Teste",
+    category: "Teste",
+    year: "2026",
+    description: "hh",
+    language: ["Java", "Spring Boot", "Angular"]
   }
 ];
 
@@ -80,29 +88,22 @@ export default function App() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-20 flex items-end justify-between gap-6">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                Biblioteca
-              </span>
-
-              <h2 className="mt-4 text-3xl font-light tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-[#7c3aed] font-light tracking-tight sm:text-4xl ">
                 Projetos
               </h2>
             </div>
-
-            <span className="hidden text-sm tabular-nums text-muted-foreground sm:inline">
-              {String(projects.length).padStart(2, "0")}
-            </span>
           </div>
 
           <div className="divide-y divide-border">
             {projects.map((project) => (
               <article
                 key={project.id}
-                className="group flex flex-col justify-between gap-6 py-10 transition-colors sm:flex-row sm:items-center"
+                className="group grid grid-cols-1 gap-6 py-10 transition-colors sm:grid-cols-[1fr_1fr_auto] sm:items-stretch"
                 onMouseEnter={() => setActiveProject(project.id)}
                 onMouseLeave={() => setActiveProject(null)}
               >
-                <div className="flex flex-col gap-2 sm:w-1/2">
+                {/* Projeto */}
+                <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span className="uppercase tracking-widest">
                       {project.category}
@@ -113,19 +114,39 @@ export default function App() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-medium tracking-tight transition-colors group-hover:text-[#7c3aed]">
+                  <h3 className="mt-2 text-2xl font-medium tracking-tight transition-colors group-hover:text-[#7c3aed]">
                     {project.title}
                   </h3>
                 </div>
 
-                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
+                {/* Descrição + tecnologias */}
+                <div className="flex min-h-[82px] flex-col justify-between">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
 
-                <div className="flex items-center gap-2 text-sm font-medium text-[#7c3aed] sm:shrink-0">
-                  <span className="text-muted-foreground transition-colors group-hover:text-[#7c3aed]">
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.language.map((language) => (
+                      <span
+                        key={language}
+                        className="inline-flex items-center justify-center rounded-full border border-border px-3 py-1 text-xs font-medium text-foreground transition-all hover:border-[#7c3aed]/40 hover:bg-[#7c3aed]/10 hover:text-[#7c3aed]"
+                      >
+                        {language}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Ver projeto */}
+                <div className="flex items-end justify-end text-sm font-medium text-[#7c3aed]">
+                  <a
+                    className="text-muted-foreground transition-colors group-hover:text-[#7c3aed] cursor-pointer"
+                    href="https://controlese.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Ver
-                  </span>
+                  </a>
 
                   <svg
                     width="16"
@@ -166,7 +187,7 @@ export default function App() {
                 Trajetória
               </span>
 
-              <h2 className="mt-4 text-3xl font-light tracking-tight sm:text-4xl">
+              <h2 className="mt-4 text-[#7c3aed] font-light tracking-tight sm:text-4xl">
                 Experiências
               </h2>
             </div>
@@ -214,12 +235,9 @@ export default function App() {
       {/* Skills */}
       <section className="relative border-y border-border px-6 py-28 sm:px-12 lg:px-16 xl:px-24">
         <div className="mx-auto max-w-6xl">
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Habilidades
-          </span>
 
-          <h2 className="mt-4 text-3xl font-light tracking-tight sm:text-4xl">
-            O que faço
+          <h2 className="mt-4 text-[#7c3aed] font-light tracking-tight sm:text-4xl">
+            Habilidades
           </h2>
 
           <div className="mt-16 grid gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
