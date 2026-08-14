@@ -58,7 +58,7 @@
   --secondary-foreground: oklch(0.96 0.005 240);
   --muted: oklch(0.18 0.03 264);
   --muted-foreground: oklch(0.65 0.04 264);
-  --accent: oklch(0.20 0.08 264);
+  --accent: oklch(0.2 0.08 264);
   --accent-foreground: oklch(0.96 0.005 240);
   --destructive: oklch(0.62 0.22 25);
   --destructive-foreground: oklch(0.98 0.005 240);
@@ -67,13 +67,12 @@
   --ring: oklch(0.55 0.22 264);
 
   --indigo: oklch(0.55 0.22 264);
-  --indigo-muted: oklch(0.30 0.12 264);
+  --indigo-muted: oklch(0.3 0.12 264);
   --surface: oklch(0.12 0.04 264);
   --glow: oklch(0.55 0.22 264 / 30%);
 }
 
 @layer base {
-
   html {
     scroll-behavior: smooth;
   }
@@ -88,7 +87,12 @@
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 }
@@ -98,7 +102,11 @@
 }
 
 @utility gradient-radial {
-  background-image: radial-gradient(circle at 30% 20%, var(--indigo-muted) 0%, transparent 45%);
+  background-image: radial-gradient(
+    circle at 30% 20%,
+    var(--indigo-muted) 0%,
+    transparent 45%
+  );
 }
 
 @utility gradient-mesh {
@@ -130,24 +138,42 @@
 
 @layer utilities {
   @keyframes float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    33% { transform: translateY(-18px) translateX(8px); }
-    66% { transform: translateY(12px) translateX(-6px); }
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    33% {
+      transform: translateY(-18px) translateX(8px);
+    }
+    66% {
+      transform: translateY(12px) translateX(-6px);
+    }
   }
 
   @keyframes pulse-slow {
-    0%, 100% { opacity: 0.35; transform: scale(1); }
-    50% { opacity: 0.55; transform: scale(1.03); }
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scale(1.03);
+    }
   }
 
   @keyframes drift {
-    0% { transform: translateX(-10%) translateY(0); }
-    50% { transform: translateX(10%) translateY(-3%); }
-    100% { transform: translateX(-10%) translateY(0); }
+    0% {
+      transform: translateX(-10%) translateY(0);
+    }
+    50% {
+      transform: translateX(10%) translateY(-3%);
+    }
+    100% {
+      transform: translateX(-10%) translateY(0);
+    }
   }
 }
-
-
 
 /* Shooting stars layer */
 #root {
@@ -165,4 +191,29 @@
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Animated background */
+
+.background-shape {
+  position: absolute;
+  opacity: 0.12;
+  will-change: transform;
+  filter: blur(0.5px);
+}
+
+.background-shape.square {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  border-radius: 8px;
+}
+
+.background-shape.circle {
+  background: #7c3aed;
+  border-radius: 50%;
+}
+
+.background-shape.triangle {
+  background: #a78bfa;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
