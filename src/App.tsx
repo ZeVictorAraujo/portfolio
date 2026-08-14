@@ -3,25 +3,12 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Nebula UI",
-    category: "Design System",
+    title: "Sistema de Controle de Finanças",
+    category: "Sistema",
     year: "2026",
-    description: "Sistema de componentes acessível para aplicações em escala.",
-  },
-  {
-    id: 2,
-    title: "Aurora FM",
-    category: "Web App",
-    year: "2025",
-    description: "Dashboard para gestão de frequência de rádios comunitárias.",
-  },
-  {
-    id: 3,
-    title: "Mono Type",
-    category: "Identidade Visual",
-    year: "2025",
-    description: "Direção artística e tipografia para marca de café especial.",
-  },
+    description: "Criado com o objetivo de melhorar o controle sobre seus gastos mensais.",
+    language: "Java, Spring Boot, Angular"
+  }
 ];
 
 const experiences = [
@@ -38,7 +25,6 @@ const experiences = [
 const skills = [
   "React & TypeScript",
   "Tailwind",
-  "UX/UI Design",
   "Node.js",
 ];
 
@@ -55,7 +41,7 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,_#7c3aed_0%,_transparent_45%)] opacity-40" />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
-          <span className="mb-8 inline-block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="mb-8 inline-block text-xs font-medium uppercase tracking-[0.2em] text-[#7c3aed]/80">
             Disponível para projetos
           </span>
 
@@ -65,7 +51,7 @@ export default function App() {
           </h1>
 
           <p className="mx-auto mt-8 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Desenvolvedor FullStack, aprendendo DevOps
+            Desenvolvedor FullStack | DevOps | Analista de TI
           </p>
 
           <div className="mt-12 flex flex-wrap items-center justify-center gap-5">
@@ -78,7 +64,7 @@ export default function App() {
 
             <a
               href="#contato"
-              className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-medium text-foreground transition-all hover:border-[#7c3aed]/40 hover:bg-[#7c3aed]/10 hover:text-[#7c3aed]"
             >
               Falar comigo
             </a>
