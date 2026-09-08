@@ -15,22 +15,15 @@ export default function AnimatedBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let animationFrame = 0;
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const elements = containerRef.current?.querySelectorAll<HTMLElement>(
+      ".background-shape"
+    );
+    let animationFrame: number | null = null;
     let currentScroll = window.scrollY;
     let targetScroll = window.scrollY;
 
-    const handleScroll = () => {
-      targetScroll = window.scrollY;
-    };
-
-    const animate = () => {
-      currentScroll += (targetScroll - currentScroll) * 0.08;
-
-      const elements =
-        containerRef.current?.querySelectorAll<HTMLElement>(
-          ".background-shape"
-        );
-
+    const render = () => {
       elements?.forEach((element, index) => {
         const shape = shapes[index];
 
@@ -46,18 +39,54 @@ export default function AnimatedBackground() {
         `;
       });
 
-      animationFrame = requestAnimationFrame(animate);
+    };
+
+    const animate = () => {
+      animationFrame = null;
+      currentScroll += (targetScroll - currentScroll) * 0.08;
+      const settled = Math.abs(targetScroll - currentScroll) < 0.1;
+      if (settled) currentScroll = targetScroll;
+      render();
+      if (!settled) animationFrame = requestAnimationFrame(animate);
+    };
+
+    const stop = () => {
+      if (animationFrame !== null) cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    };
+
+    const handleScroll = () => {
+      if (motionPreference.matches || document.hidden) return;
+      targetScroll = window.scrollY;
+      if (animationFrame === null && targetScroll !== currentScroll) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    const syncMotion = () => {
+      stop();
+      currentScroll = targetScroll = motionPreference.matches ? 0 : window.scrollY;
+      render();
+    };
+
+    const handleVisibility = () => {
+      if (document.hidden) stop();
+      else syncMotion();
     };
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
-    animationFrame = requestAnimationFrame(animate);
+    motionPreference.addEventListener("change", syncMotion);
+    document.addEventListener("visibilitychange", handleVisibility);
+    syncMotion();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      cancelAnimationFrame(animationFrame);
+      motionPreference.removeEventListener("change", syncMotion);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      stop();
     };
   }, []);
 

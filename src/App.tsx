@@ -47,7 +47,7 @@ export default function App() {
         {/* Hero — Split Screen */}
         <section className="relative flex min-h-screen items-center px-6 py-28 sm:px-12 lg:px-16 xl:px-24">
           <div className="relative z-10 mx-auto w-full max-w-6xl text-center">
-            <span className="mb-8 inline-block text-xs font-medium uppercase tracking-[0.2em] text-[#7c3aed]/80">
+            <span className="mb-8 inline-block text-xs font-medium uppercase tracking-[0.2em] text-[#6d28d9]">
               Disponível para projetos
             </span>
 
@@ -270,7 +270,7 @@ export default function App() {
 
             <a
               href="mailto:josearaujo.ba@hotmail.com"
-              className="mt-12 inline-block text-lg font-light text-[#7c3aed] transition-colors hover:text-white"
+              className="mt-12 inline-block text-lg font-light text-[#7c3aed] transition-colors hover:text-[#5b21b6]"
             >
               josearaujo.ba@hotmail.com
             </a>
