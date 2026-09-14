@@ -9,17 +9,8 @@ const projects = [
     year: "2026",
     description:
       "Criado com o objetivo de melhorar o controle sobre seus gastos mensais.",
-    language: ["Java", "Spring Boot", "Angular"],
-    link: "https://github.com/",
-  },
-  {
-    id: 2,
-    title: "Teste",
-    category: "Teste",
-    year: "2026",
-    description: "hh",
-    language: ["Java", "Spring Boot", "Angular"],
-    link: "https://github.com/",
+    language: ["Next.JS", "Material UI", "Supabase", "TypeScript"],
+    link: "https://personalfin.zevictoraraujo.com.br/",
   },
 ];
 
