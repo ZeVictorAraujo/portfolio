@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
 import financeDashboard from "./assets/personal-finance-home.png";
 
@@ -18,6 +19,7 @@ const skills = [
 ];
 
 export default function App() {
+  const imageDialog = useRef<HTMLDialogElement>(null);
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-primary/30">
       <a href="#conteudo" className="skip-link">Pular para o conteúdo</a>
@@ -35,6 +37,17 @@ export default function App() {
         </nav>
       </header>
 
+      <dialog ref={imageDialog} aria-labelledby="image-dialog-title" className="image-dialog" onClick={(event) => {
+        if (event.target === event.currentTarget) imageDialog.current?.close();
+      }}>
+        <div className="image-dialog-panel">
+          <div className="image-dialog-header">
+            <h2 id="image-dialog-title">Home do Personal.fin</h2>
+            <button type="button" onClick={() => imageDialog.current?.close()} className="image-dialog-close">Fechar ×</button>
+          </div>
+          <img src={financeDashboard} alt="Home do Personal.fin ampliada, com dados de demonstração" width={1440} height={1301} className="image-dialog-image" />
+        </div>
+      </dialog>
       <main id="conteudo">
         <section id="inicio" className="mx-auto flex min-h-[92svh] max-w-6xl items-center px-5 pb-16 pt-28 sm:px-8">
           <div className="min-w-0 w-full max-w-5xl animate-enter">
@@ -79,9 +92,9 @@ export default function App() {
 
             <article className="grid overflow-hidden rounded-2xl border border-border bg-card shadow-panel lg:grid-cols-[1.15fr_0.85fr]">
               <figure className="flex min-w-0 flex-col justify-center bg-surface p-4 sm:p-6">
-                <a href={financeDashboard} target="_blank" rel="noreferrer" aria-label="Ampliar captura da Home do Personal.fin" className="block overflow-hidden rounded-lg border border-border transition-opacity hover:opacity-90">
+                <button type="button" onClick={() => imageDialog.current?.showModal()} aria-haspopup="dialog" aria-label="Ampliar captura da Home do Personal.fin" className="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-border transition-opacity hover:opacity-90">
                   <img src={financeDashboard} alt="Home do Personal.fin com saldo mensal, total das faturas, gráficos de entradas e saídas e tabela de resumo mensal" width={1440} height={1301} loading="lazy" className="block h-auto w-full" />
-                </a>
+                </button>
                 <figcaption className="mt-3 text-center text-xs text-muted-foreground">Home do Personal.fin · Dados de demonstração · Clique para ampliar</figcaption>
               </figure>
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
