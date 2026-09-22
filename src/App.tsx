@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
-import financeDashboard from "./assets/finance-dashboard.jpg";
+import financeDashboard from "./assets/personal-finance-home.png";
 
 function Github({ className }: { className?: string }) {
   return <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.17c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.27 1.19-3.07-.12-.29-.52-1.45.11-3.02 0 0 .97-.31 3.18 1.17a11.1 11.1 0 0 1 5.79 0c2.2-1.48 3.17-1.17 3.17-1.17.63 1.57.23 2.73.11 3.02.74.8 1.19 1.82 1.19 3.07 0 4.41-2.69 5.39-5.25 5.67.41.35.78 1.04.78 2.1v3.11c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" /></svg>;
@@ -78,10 +78,12 @@ export default function App() {
             </div>
 
             <article className="grid overflow-hidden rounded-2xl border border-border bg-card shadow-panel lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="relative min-h-72 overflow-hidden bg-surface lg:min-h-[520px]">
-                <img src={financeDashboard} alt="Ilustração de um painel financeiro, conforme a referência visual do portfólio" width={1200} height={800} loading="lazy" className="h-full w-full object-cover object-left" />
-                <span className="absolute bottom-4 left-4 rounded bg-background/90 px-3 py-1.5 text-xs text-muted-foreground">Imagem ilustrativa do projeto</span>
-              </div>
+              <figure className="flex min-w-0 flex-col justify-center bg-surface p-4 sm:p-6">
+                <a href={financeDashboard} target="_blank" rel="noreferrer" aria-label="Ampliar captura da Home do Personal.fin" className="block overflow-hidden rounded-lg border border-border transition-opacity hover:opacity-90">
+                  <img src={financeDashboard} alt="Home do Personal.fin com saldo mensal, total das faturas, gráficos de entradas e saídas e tabela de resumo mensal" width={1440} height={1301} loading="lazy" className="block h-auto w-full" />
+                </a>
+                <figcaption className="mt-3 text-center text-xs text-muted-foreground">Home do Personal.fin · Dados de demonstração · Clique para ampliar</figcaption>
+              </figure>
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                 <div className="mb-7 flex flex-wrap gap-2">
                   {["Next.js", "Material UI", "Supabase", "TypeScript"].map((tech) => (
