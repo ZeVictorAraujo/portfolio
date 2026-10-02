@@ -49,45 +49,38 @@ export default function App() {
         </div>
       </dialog>
       <main id="conteudo">
-        <section id="inicio" className="mx-auto flex min-h-[92svh] max-w-6xl items-center px-5 pb-16 pt-28 sm:px-8">
+        <section id="inicio" className="mx-auto flex max-w-6xl items-center px-5 pb-10 pt-28 sm:pb-14 sm:pt-36 sm:px-8">
           <div className="min-w-0 w-full max-w-5xl animate-enter">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1.5 font-mono text-[11px] font-bold uppercase text-primary">
-              <span className="size-2 rounded-full bg-primary shadow-status" />
+            <div className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-secondary">
+              <span className="size-2 rounded-full bg-secondary" />
               Disponível para projetos
             </div>
-            <h1 className="text-balance text-[clamp(1.75rem,8vw,3rem)] font-bold leading-[1.05] sm:text-7xl lg:text-8xl">
+            <h1 className="text-balance text-[clamp(2rem,7.5vw,6rem)] font-bold leading-[1.05] tracking-tight">
               Victor Araújo
-              <span className="mt-2 block text-[0.75em] leading-tight text-gradient">Desenvolvimento & TI</span>
+              <span className="mt-3 block text-[0.55em] font-medium leading-tight text-primary">Desenvolvimento & TI</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/80 sm:text-xl">
               Atuo com suporte e infraestrutura de TI e desenvolvo aplicações web. Conecto a experiência com servidores, redes e sistemas às soluções que construo com código.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              {[
-                ["01/", "Desenvolvimento web"],
-                ["02/", "Infraestrutura"],
-                ["03/", "Suporte e sistemas"],
-              ].map(([number, label]) => (
-                <div key={number} className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5">
-                  <span className="font-mono text-sm text-secondary">{number}</span>
-                  <span className="text-sm font-semibold">{label}</span>
-                </div>
+            <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-foreground">
+              {["Desenvolvimento web", "Infraestrutura", "Suporte e sistemas"].map((label) => (
+                <li key={label}>{label}</li>
               ))}
-            </div>
-            <a href="#projetos" className="mt-14 inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-              Explorar trabalho <ArrowDown className="size-4" aria-hidden="true" />
+            </ul>
+            <a href="#projetos" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-foreground">
+              Ver projetos <ArrowDown className="size-4" aria-hidden="true" />
             </a>
           </div>
         </section>
 
-        <section id="projetos" className="scroll-mt-24 px-5 py-24 sm:px-8">
+        <section id="projetos" className="scroll-mt-24 px-5 pb-20 pt-10 sm:px-8 sm:pb-24 sm:pt-14">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
               <div>
-                <p className="mb-3 font-mono text-xs font-bold uppercase text-primary">Projeto em destaque / 2026</p>
+                <p className="mb-3 text-sm font-medium text-muted-foreground">Projeto em destaque / 2026</p>
                 <h2 className="text-3xl font-bold sm:text-4xl">Personal.fin — Controle financeiro</h2>
               </div>
-              <span className="font-mono text-xs text-muted-foreground">01 — Projeto pessoal</span>
+              <span className="text-sm text-muted-foreground">Projeto pessoal</span>
             </div>
 
             <article className="grid overflow-hidden rounded-2xl border border-border bg-card shadow-panel lg:grid-cols-[1.15fr_0.85fr]">
@@ -100,7 +93,7 @@ export default function App() {
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                 <div className="mb-7 flex flex-wrap gap-2">
                   {["Next.js", "Material UI", "Supabase", "TypeScript"].map((tech) => (
-                    <span key={tech} className="rounded border border-border px-2.5 py-1 font-mono text-[10px] uppercase text-muted-foreground">{tech}</span>
+                    <span key={tech} className="rounded border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">{tech}</span>
                   ))}
                 </div>
                 <p className="text-lg leading-relaxed text-muted-foreground">
@@ -119,28 +112,62 @@ export default function App() {
                 <a href="https://github.com/ZeVictorAraujo/personal-finance" target="_blank" rel="noreferrer" className="mt-5 inline-flex w-fit items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><Github className="size-4" aria-hidden="true" /> Ver código no GitHub</a>
               </div>
             </article>
+
+            <article id="zevnucleo" aria-labelledby="zevnucleo-title" className="mt-16 grid gap-8 rounded-2xl border border-border bg-card p-7 sm:p-10 lg:grid-cols-[1fr_1fr] lg:gap-14 lg:p-12">
+              <div>
+                <p className="mb-3 text-sm font-medium text-secondary">Em desenvolvimento</p>
+                <h2 id="zevnucleo-title" className="text-3xl font-bold tracking-tight sm:text-4xl">ZevNucleo</h2>
+                <p className="mt-3 text-xl font-medium text-foreground">Organização da rotina de TI</p>
+                <p className="mt-5 max-w-prose leading-relaxed text-muted-foreground">
+                  Sistema próprio para organizar chamados e acompanhar atendimentos técnicos. Inspirado nas funcionalidades do GLPI, reúne o registro de solicitações, filtros e histórico de atendimento em uma interface construída com Next.js e Material UI.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {["Next.js", "TypeScript", "Material UI", "PostgreSQL", "Prisma"].map((tech) => (
+                    <span key={tech} className="rounded border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col justify-center">
+                <h3 className="text-lg font-semibold">Do chamado ao histórico de atendimento</h3>
+                <ul className="mt-6 space-y-4 text-sm leading-relaxed">
+                  {["Login privado e acesso aos próprios chamados", "Cadastro de chamados com busca e filtros por tipo e situação", "Registro de atendimento e solução com histórico de atualizações", "Banco PostgreSQL com Prisma ORM e migrações versionadas"].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-secondary" />{item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-5">
+                  <a href="https://zevnucleo.tech/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-3 text-sm font-bold text-background transition-colors hover:bg-primary hover:text-primary-foreground">
+                    Acessar projeto <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
+                  <a href="https://github.com/ZeVictorAraujo/ZevNucleo" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+                    <Github className="size-4" /> Ver código no GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
         <section id="experiencia" className="scroll-mt-24 border-y border-border bg-section px-5 py-24 sm:px-8">
           <div className="mx-auto grid max-w-6xl gap-20 md:grid-cols-12">
             <div className="md:col-span-7">
-              <p className="mb-10 font-mono text-xs font-bold uppercase text-primary">Experiência profissional</p>
+              <h2 className="mb-8 text-2xl font-semibold tracking-tight">Experiência profissional</h2>
               <div className="relative border-l border-border pl-8">
                 <span className="absolute -left-[5px] top-1 size-2.5 rounded-full bg-primary ring-4 ring-background" />
                 <div className="flex flex-col justify-between gap-2 sm:flex-row">
                   <div>
-                    <p className="font-mono text-xs uppercase text-muted-foreground">Policlínica Regional de Saúde de Alagoinhas</p>
+                    <p className="text-sm text-muted-foreground">Policlínica Regional de Saúde de Alagoinhas</p>
                     <h3 className="mt-2 text-2xl font-bold">Técnico de TI</h3>
                   </div>
-                  <span className="font-mono text-xs text-muted-foreground">Out. 2025 — Atual</span>
+                  <span className="text-sm text-muted-foreground">Out. 2025 — Atual</span>
                 </div>
                 <p className="mt-5 max-w-xl leading-relaxed text-muted-foreground">
                   Atuação pela Master Serviços na administração de servidores e redes, políticas de segurança, monitoramento de sistemas e CFTV. Atendimento N2 e resolução de incidentes, manutenção de estações e apoio à implantação, operação e suporte do AGHUSE em ambiente hospitalar.
                 </p>
               </div>
               <div className="mt-12 rounded-xl border border-border bg-card p-6">
-                <h2 className="font-mono text-xs font-bold uppercase text-primary">Formação acadêmica</h2>
+                <h2 className="text-xl font-semibold tracking-tight">Formação acadêmica</h2>
                 <h3 className="mt-5 font-semibold">Análise e Desenvolvimento de Sistemas</h3>
                 <p className="mt-1 text-sm text-muted-foreground">Tecnólogo · UNOPAR / Anhanguera · Cursando</p>
                 <h3 className="mt-5 font-semibold">Técnico em Desenvolvimento de Sistemas</h3>
@@ -149,12 +176,11 @@ export default function App() {
             </div>
 
             <div className="md:col-span-5">
-              <p className="mb-10 font-mono text-xs font-bold uppercase text-primary">Habilidades técnicas</p>
+              <h2 className="mb-8 text-2xl font-semibold tracking-tight">Habilidades técnicas</h2>
               <div className="divide-y divide-border border-y border-border">
-                {skills.map(([skill, detail], index) => (
-                  <div key={skill} className="flex items-center justify-between py-5">
-                    <div className="pr-5"><h3 className="font-semibold">{skill}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p></div>
-                    <span className="font-mono text-xs text-secondary">0{index + 1}</span>
+                {skills.map(([skill, detail]) => (
+                  <div key={skill} className="py-5">
+                    <div className="max-w-prose"><h3 className="font-semibold">{skill}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{detail}</p></div>
                   </div>
                 ))}
               </div>
@@ -163,10 +189,10 @@ export default function App() {
         </section>
 
         <section id="contato" className="scroll-mt-20 px-5 py-24 sm:px-8">
-          <div className="mx-auto max-w-6xl rounded-2xl bg-primary p-8 text-center text-primary-foreground sm:p-16">
-            <p className="font-mono text-xs font-bold uppercase opacity-75">Contato</p>
-            <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">Vamos criar algo juntos?</h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg opacity-80">Aberto a oportunidades, projetos e conversas sobre desenvolvimento, infraestrutura e tecnologia.</p>
+          <div className="mx-auto max-w-6xl rounded-2xl bg-contact p-8 text-center text-primary-foreground sm:p-16">
+            <p className="text-sm font-medium">Contato</p>
+            <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-5xl">Converse comigo sobre seu projeto</h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg">Aberto a oportunidades, projetos e conversas sobre desenvolvimento, infraestrutura e tecnologia.</p>
             <a href="mailto:josearaujo.ba@hotmail.com" className="mx-auto mt-9 inline-flex max-w-full items-center justify-center gap-2 break-all rounded-lg bg-background px-4 sm:px-6 py-3.5 font-bold text-foreground transition-transform hover:-translate-y-0.5">
               <Mail className="size-4" aria-hidden="true" /> josearaujo.ba@hotmail.com
             </a>
@@ -177,7 +203,7 @@ export default function App() {
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 px-5 text-sm text-muted-foreground sm:flex-row sm:px-8">
           <p>© 2026 Victor Araújo</p>
-          <div className="flex gap-6 font-mono text-xs uppercase">
+          <div className="flex gap-6 text-sm">
             <a href="https://github.com/ZeVictorAraujo" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary"><Github className="size-4" aria-hidden="true" /> GitHub</a>
             <a href="https://www.linkedin.com/in/zevictoraraujo/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-primary"><Linkedin className="size-4" aria-hidden="true" /> LinkedIn</a>
           </div>
