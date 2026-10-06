@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
+import portrait from "./assets/victor-portrait.png";
 import financeDashboard from "./assets/personal-finance-home.png";
 
 function Github({ className }: { className?: string }) {
@@ -49,13 +50,13 @@ export default function App() {
         </div>
       </dialog>
       <main id="conteudo">
-        <section id="inicio" className="mx-auto flex max-w-6xl items-center px-5 pb-10 pt-28 sm:pb-14 sm:pt-36 sm:px-8">
-          <div className="min-w-0 w-full max-w-5xl animate-enter">
+        <section id="inicio" className="hero-layout mx-auto max-w-6xl px-5 pb-10 pt-28 sm:pb-14 sm:pt-36 sm:px-8">
+          <div className="hero-copy min-w-0 w-full animate-enter">
             <div className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-secondary">
               <span className="size-2 rounded-full bg-secondary" />
               Disponível para projetos
             </div>
-            <h1 className="text-balance text-[clamp(2rem,7.5vw,6rem)] font-bold leading-[1.05] tracking-tight">
+            <h1 className="hero-title text-balance text-[clamp(2rem,7.5vw,6rem)] font-bold leading-[1.05] tracking-tight">
               Victor Araújo
               <span className="mt-3 block text-[0.55em] font-medium leading-tight text-primary">Desenvolvimento & TI</span>
             </h1>
@@ -70,6 +71,9 @@ export default function App() {
             <a href="#projetos" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-foreground">
               Ver projetos <ArrowDown className="size-4" aria-hidden="true" />
             </a>
+          </div>
+          <div className="hero-portrait">
+            <img src={portrait} alt="Victor Araújo" width={1254} height={1254} fetchPriority="high" className="hero-portrait-image" />
           </div>
         </section>
 
