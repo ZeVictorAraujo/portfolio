@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { ArrowDown, ArrowUpRight, Mail } from "lucide-react";
-import portrait from "./assets/victor-portrait.png";
+import portrait from "./assets/victor-portrait-960.webp";
+import portraitSmall from "./assets/victor-portrait-480.webp";
 import financeDashboard from "./assets/personal-finance-home.png";
 
 function Github({ className }: { className?: string }) {
@@ -73,7 +74,17 @@ export default function App() {
             </a>
           </div>
           <div className="hero-portrait">
-            <img src={portrait} alt="Victor Araújo" width={1254} height={1254} fetchPriority="high" className="hero-portrait-image" />
+            <img
+              src={portrait}
+              srcSet={`${portraitSmall} 480w, ${portrait} 960w`}
+              sizes="(min-width: 1152px) 435px, (min-width: 1024px) calc((100vw - 88px) / 2.45), (min-width: 424px) 384px, calc(100vw - 40px)"
+              alt="Victor Araújo"
+              width={960}
+              height={960}
+              fetchPriority="high"
+              decoding="async"
+              className="hero-portrait-image"
+            />
           </div>
         </section>
 
